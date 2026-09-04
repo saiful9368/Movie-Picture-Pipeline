@@ -96,6 +96,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
+            --build-arg REACT_APP_MOVIE_API_URL="${{ secrets.REACT_APP_MOVIE_API_URL }}" \
             -t ${{ secrets.FRONTEND_ECR_REPOSITORY }}:${{ github.sha }} \
             .
 
