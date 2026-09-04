@@ -103,7 +103,7 @@ jobs:
             --name cluster
 
       - name: Update Kubernetes Image
-        working-directory: starter/backend
+        working-directory: starter/backend/k8s
         run: |
           kustomize edit set image \
             backend=${{ secrets.BACKEND_ECR_REPOSITORY }}:${{ github.sha }}
